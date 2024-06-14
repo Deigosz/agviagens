@@ -64,6 +64,7 @@
   <main class="container">
     <?php
     require_once("../Utils/connection.php");
+    require_once("../Functions/Func.php")
     ?>
   </main>
 </body>
