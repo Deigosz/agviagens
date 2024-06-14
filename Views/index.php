@@ -2,7 +2,8 @@
     require_once("cabecalho.php");
 ?>
 
-    <h1>Sistema PHP + MySql</h1>
+    <section> 
+    </section>
 
 <?php
     require_once("rodape.html");

@@ -1,0 +1,7 @@
+*{
+    background-image: url('../Styles/Imgs/Fundo.png');
+}
+
+.navbar navbar-expand-lg bg-body-tertiary{
+    color: white;
+}
