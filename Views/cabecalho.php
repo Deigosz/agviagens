@@ -12,28 +12,59 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-      
-      <div>
-        <i class="bi bi-globe-americas"></i>
-        <a class="navbar-brand" href="#">Destinator</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      </div>
+  <div class="teste">
+    <nav class="navbar navbar-expand-lg .bg-secondary.bg-gradient p-2">
+      <div class="container">
+        <div class="d-flex align-items-center">
+          <i class="bi bi-globe-americas"></i>
+          <a class="navbar-brand ms-2" href="#">Destinator</a>
+          <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
 
-      
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" href="produtos/index.php">Produtos</a>
-          </li>
-        </ul>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+            <li class="nav-item mx-5">
+              <a class="nav-link" href="#">
+                <i class="bi bi-suitcase-lg-fill mt-1"></i>
+                Pacotes
+              </a>
+            </li>
+
+            <li class="nav-item mx-5">
+              <a class="nav-link" href="#">
+                <i class="bi bi-suitcase-lg-fill mt-1"></i>
+                Passagens Avião
+              </a>
+            </li>
+
+            <li class="nav-item mx-5">
+              <a class="nav-link" href="#">
+                <i class="bi bi-suitcase-lg-fill mt-1"></i>
+                Passagens Cruzeiro
+              </a>
+            </li>
+
+          </ul>
+
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <i class="bi bi-suitcase-lg-fill mt-1"></i>
+                Login
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
-      
-    </div>
-  </nav>
+    </nav>
+  </div>
   <main class="container">
     <?php
     require_once("../Utils/connection.php");
+    ?>
+  </main>
+</body>
+</html>

@@ -1,7 +1,14 @@
-*{
-    background-image: url('../Styles/Imgs/Fundo.png');
+.nav-link {
+    display: flex;
+    align-items: center;
 }
 
-.navbar navbar-expand-lg bg-body-tertiary{
-    color: white;
+.nav-link i {
+    margin-right: 8px;
+}
+
+.navbar-brand,
+.nav-link {
+    color: black !important;
+    font-weight: bold !important;
 }
