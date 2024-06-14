@@ -17,7 +17,7 @@
       <div class="container">
         <div class="d-flex align-items-center">
           <i class="bi bi-globe-americas"></i>
-          <a class="navbar-brand ms-2" href="#">Destinator</a>
+          <a class="navbar-brand ms-2" href="index.php">Destinator</a>
           <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -51,8 +51,8 @@
 
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link" href="#">
-                <i class="bi bi-suitcase-lg-fill mt-1"></i>
+              <a class="nav-link-login" href="login.php">
+              <i class="bi bi-box-arrow-in-right"></i>
                 Login
               </a>
             </li>
