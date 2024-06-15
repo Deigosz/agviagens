@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo '<script>
                     setTimeout(function() {
                         window.location.href = "clientes.php";
-                    }, 1800); // 3 segundos
+                    }, 1800);
                  </script>';
         } else {
             $mensagem = '<div class="alert alert-danger" role="alert">' . $resultado . '</div>';

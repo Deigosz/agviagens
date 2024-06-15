@@ -29,14 +29,14 @@
             <li class="nav-item mx-5">
               <a class="nav-link" href="#">
                 <i class="bi bi-suitcase-lg-fill mt-1"></i>
-                Pacotes
+                
               </a>
             </li>
 
             <li class="nav-item mx-5">
-              <a class="nav-link" href="#">
+              <a class="nav-link" href="viagens.php">
                 <i class="bi bi-suitcase-lg-fill mt-1"></i>
-                Passagens Avião
+                Pacotes Passagens
               </a>
             </li>
 
