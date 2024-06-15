@@ -2,7 +2,7 @@
 require_once("cabecalho.php");
 $conn = conectarBanco();
 
-
+// Remover viagem se o parâmetro remover_id estiver presente na URL
 if (isset($_GET['remover_id'])) {
     $remover_id = $_GET['remover_id'];
     $removido = removerViagem($conn, $remover_id);
@@ -13,7 +13,7 @@ if (isset($_GET['remover_id'])) {
     }
 }
 
-
+// Lógica para cadastro e edição de viagens
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['editar'])) {
         $id_viagem = $_POST['id_viagem'];

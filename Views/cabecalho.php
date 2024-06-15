@@ -26,16 +26,24 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
           <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+
+            <li class="nav-item mx-5">
+              <a class="nav-link" href="contaspagar.php">
+                <i class="bi bi-cash-stack"></i>
+                Pagamentos
+              </a>
+            </li>
+
             <li class="nav-item mx-5">
               <a class="nav-link" href="reservas.php">
-                <i class="bi bi-suitcase-lg-fill mt-1"></i>
+                <i class="bi bi-airplane-fill"></i>
                 Reservas
               </a>
             </li>
 
             <li class="nav-item mx-5">
               <a class="nav-link" href="viagens.php">
-                <i class="bi bi-suitcase-lg-fill mt-1"></i>
+                <i class="bi bi-person-check-fill"></i>
                 Pacotes Passagens
               </a>
             </li>

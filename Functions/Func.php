@@ -244,3 +244,57 @@ function buscarReservaPorId($conn, $id_reserva) {
     }
 }
 
+/*Contas a Pagar*/
+function listarPagamentos($conn) {
+    try {
+        $sql = "SELECT 
+                    p.Id_Pagamento AS ID,
+                    r.Id_Reserva AS ReservaID,
+                    c.Nome AS NomeCliente,
+                    pv.Destino AS Destino,
+                    p.Valor_Pago AS `Valor Pago`,
+                    p.Data_Pagamento AS `Data Pagamento`
+                FROM 
+                    Tbl_Pagamentos p
+                LEFT JOIN 
+                    Tbl_Reservas r ON p.Id_Reserva = r.Id_Reserva
+                LEFT JOIN 
+                    Tbl_Clientes c ON r.Id_Cliente = c.Id_Cliente
+                LEFT JOIN 
+                    Tbl_PacotesViagens pv ON r.Id_Pacote = pv.Id_Pacote;";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+        $pagamentos = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $pagamentos;
+    } catch (PDOException $e) {
+        echo "Erro ao listar pagamentos: " . $e->getMessage();
+        return [];
+    }
+}
+
+function cadastrarPagamento($conn, $id_reserva, $valor_pago, $data_pagamento) {
+    try {
+        $sql = "INSERT INTO Tbl_Pagamentos (Id_Reserva, Valor_Pago, Data_Pagamento) VALUES (:id_reserva, :valor_pago, :data_pagamento)";
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(':id_reserva', $id_reserva);
+        $stmt->bindParam(':valor_pago', $valor_pago);
+        $stmt->bindParam(':data_pagamento', $data_pagamento);
+        $stmt->execute();
+        return true;
+    } catch (PDOException $e) {
+        return "Erro ao cadastrar pagamento: " . $e->getMessage();
+    }
+}
+
+
+function removerPagamento($conn, $id_pagamento) {
+    try {
+        $sql = "DELETE FROM Tbl_Pagamentos WHERE Id_Pagamento = :id_pagamento";
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(':id_pagamento', $id_pagamento);
+        $stmt->execute();
+        return true;
+    } catch (PDOException $e) {
+        return "Erro ao remover pagamento: " . $e->getMessage();
+    }
+}
