@@ -2,6 +2,7 @@
 require_once("cabecalho.php");
 $conn = conectarBanco();
 
+
 if (isset($_GET['remover_id'])) {
     $remover_id = $_GET['remover_id'];
     $removido = removerViagem($conn, $remover_id);
@@ -11,6 +12,7 @@ if (isset($_GET['remover_id'])) {
         echo '<div class="alert alert-danger" role="alert">Erro ao remover viagem.</div>';
     }
 }
+
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['editar'])) {

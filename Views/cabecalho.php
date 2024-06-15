@@ -27,9 +27,9 @@
 
           <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
             <li class="nav-item mx-5">
-              <a class="nav-link" href="#">
+              <a class="nav-link" href="reservas.php">
                 <i class="bi bi-suitcase-lg-fill mt-1"></i>
-                
+                Reservas
               </a>
             </li>
 
