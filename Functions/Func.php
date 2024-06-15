@@ -2,7 +2,7 @@
 require_once("../Utils/connection.php");
 
 /*Viagens */
-function cadastrarUsuario($conn, $nome, $email, $telefone, $senha) {
+function cadastrarUsuario($conn, $nome, $email, $telefone) {
     try {
 
         $sql = "SELECT COUNT(*) FROM Tbl_Clientes WHERE Email = :email";
@@ -15,13 +15,12 @@ function cadastrarUsuario($conn, $nome, $email, $telefone, $senha) {
             return "Erro: Email já cadastrado.";
         }
 
-        $sql = "INSERT INTO Tbl_Clientes (Nome, Telefone, Email, Senha) VALUES (:nome, :telefone, :email, :senha)";
+        $sql = "INSERT INTO Tbl_Clientes (Nome, Telefone, Email) VALUES (:nome, :telefone, :email)";
         $stmt = $conn->prepare($sql);
         
         $stmt->bindParam(':nome', $nome);
         $stmt->bindParam(':email', $email);
         $stmt->bindParam(':telefone', $telefone);
-        $stmt->bindParam(':senha', $telefone);
         
         $stmt->execute();
 

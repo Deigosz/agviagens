@@ -5,11 +5,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nome = $_POST['nome'];
     $email = $_POST['email'];
     $telefone = $_POST['telefone'];
-    $senha = $_POST['senha'];
 
     $conn = conectarBanco();
     if ($conn) {
-        $resultado = cadastrarUsuario($conn, $nome, $email, $telefone, $senha);
+        $resultado = cadastrarUsuario($conn, $nome, $email, $telefone);
         if ($resultado === true) {
             $mensagem = '<div class="alert alert-success" role="alert">Usuário cadastrado com sucesso!</div>';
             echo '<script>
@@ -48,10 +47,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <div class="form-group">
                                 <label for="telefone">Telefone:</label>
                                 <input type="tel" class="form-control" id="telefone" name="telefone">
-                            </div>
-                            <div class="form-group">
-                                <label for="senha">Senha:</label>
-                                <input type="password" class="form-control" id="senha" name="senha" required>
                             </div>
                             <br>
                             <button type="submit" class="btn btn-primary">Cadastrar</button>

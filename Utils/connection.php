@@ -2,7 +2,7 @@
 function conectarBanco()
 {
     $db_host = 'localhost';
-    $db = 'AgenciaDeViagens';
+    $db = 'AgenciaDeViagens2';
     $usuario = 'root';
     $senha = '';
     $dsn = "mysql:host=$db_host;dbname=$db;charset=utf8mb4";
