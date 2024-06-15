@@ -1,30 +1,37 @@
 <?php
 require_once("cabecalho.php");
 
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nome = $_POST['nome'];
     $email = $_POST['email'];
     $telefone = $_POST['telefone'];
-    
+    $senha = $_POST['senha'];
+
     $conn = conectarBanco();
     if ($conn) {
-        if (cadastrarUsuario($conn, $nome, $email, $telefone)) {
+        $resultado = cadastrarUsuario($conn, $nome, $email, $telefone, $senha);
+        if ($resultado === true) {
             $mensagem = '<div class="alert alert-success" role="alert">Usuário cadastrado com sucesso!</div>';
+            echo '<script>
+                    setTimeout(function() {
+                        window.location.href = "clientes.php";
+                    }, 1800); // 3 segundos
+                 </script>';
         } else {
-            $mensagem = '<div class="alert alert-danger" role="alert">Erro ao cadastrar usuário. Tente novamente.</div>';
+            $mensagem = '<div class="alert alert-danger" role="alert">' . $resultado . '</div>';
         }
     } else {
         $mensagem = '<div class="alert alert-danger" role="alert">Erro na conexão com o banco de dados.</div>';
     }
 }
 ?>
+
 <section>
     <div class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header fw-bold bg-primary text-white">
                         Cadastro de Cliente
                     </div>
                     <div class="card-body">
@@ -42,10 +49,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <label for="telefone">Telefone:</label>
                                 <input type="tel" class="form-control" id="telefone" name="telefone">
                             </div>
-                            <!-- <div class="form-group">
-                                <label for="endereco">Senha:</label>
-                                <input type="password" class="form-control" id="senha" name="senha">
-                            </div> -->
+                            <div class="form-group">
+                                <label for="senha">Senha:</label>
+                                <input type="password" class="form-control" id="senha" name="senha" required>
+                            </div>
+                            <br>
                             <button type="submit" class="btn btn-primary">Cadastrar</button>
                         </form>
                     </div>
@@ -54,7 +62,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
     </div>
 </section>
-
 
 <?php
 require_once("rodape.html");

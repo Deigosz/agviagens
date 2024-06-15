@@ -10,9 +10,9 @@ function conectarBanco()
     try {
         $pdo = new PDO($dsn, $usuario, $senha);
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        return $pdo; 
+        return $pdo;
     } catch (PDOException $e) {
-        return null; 
+        return null;
     }
 }
 ?>

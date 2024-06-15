@@ -41,9 +41,9 @@
             </li>
 
             <li class="nav-item mx-5">
-              <a class="nav-link" href="#">
+              <a class="nav-link" href="clientes.php">
                 <i class="bi bi-suitcase-lg-fill mt-1"></i>
-                Passagens Cruzeiro
+                Clientes
               </a>
             </li>
 
@@ -53,7 +53,7 @@
             <li class="nav-item">
               <a class="nav-link-login" href="login.php">
               <i class="bi bi-box-arrow-in-right"></i>
-                Login
+                Cadastro
               </a>
             </li>
           </ul>
